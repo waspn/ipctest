@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TEST MESSAGE</title>
+</head>
+
+<body>
+  <p id='testext'></p>
+</body>
+<script>
+  const { ipcRenderer } = require('electron')
+  const testext = document.getElementById('testext')
+  ipcRenderer.on('aaa', (event) => {
+    console.log('eventevent', event)
+    testext.innerHTML = 'HAPPY NEW YEAR'
+  })
+</script>
+
+</html>
